@@ -1,0 +1,3 @@
+[submodule "libs/SexyAppFramework"]
+	path = libs/SexyAppFramework
+	url = https://github.com/ProjectReversio/SexyAppFramework
