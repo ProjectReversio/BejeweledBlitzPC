@@ -4,6 +4,8 @@ build
 game/*.exe
 game/*.ilk
 game/*.pdb
+game/*
+game/!bass.dll
 demos/*.exe
 demos/*.ilk
 demos/*.pdb
