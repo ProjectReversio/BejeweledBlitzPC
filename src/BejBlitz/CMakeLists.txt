@@ -7,9 +7,22 @@ include_directories(${CMAKE_SOURCE_DIR}/libs/SexyAppFramework/source/)
 set (SRC_MAIN
 	# Sources
 	main.cpp
+	Bej3App.cpp
+	SexyApp.cpp
+	InternetManager.cpp
+	AdInstance.cpp
+	BetaSupport.cpp
+	WinInetHTTPTransfer.cpp
+	PopDRMComm.cpp
 	
 	# Headers
-	
+	Bej3App.h
+	SexyApp.h
+	InternetManager.h
+	AdInstance.h
+	BetaSupport.h
+	WinInetHTTPTransfer.h
+	PopDRMComm.h
 )
 
 add_executable(BejBlitz WIN32 ${SRC_MAIN})
