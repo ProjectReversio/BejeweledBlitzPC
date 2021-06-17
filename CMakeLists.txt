@@ -10,4 +10,9 @@ else()
 	message( FATAL_ERROR "Can't find submodule for SexyAppFramework! Run ``git submodule update --init --recursive``")
 endif()
 
+# For some reason this doesn't automatically get set on the Bejeweled Project. TODO: Figure it out later
+if (${WideStrings})
+	add_compile_definitions(_USE_WIDE_STRING)
+endif()
+
 add_subdirectory(src)
