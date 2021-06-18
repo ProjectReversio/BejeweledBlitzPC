@@ -1,7 +1,11 @@
 #include "Bej3App.h"
 #include "GraphicsRecorder.h"
+#include "Resources.h"
 
 #include <SexyAppFramework/D3DTester.h>
+#include <SexyAppFramework/SWTri.h>
+#include <SexyAppFramework/ResourceManager.h>
+#include <SexyAppFramework/SoundManager.h>
 
 namespace Sexy
 {
@@ -180,7 +184,92 @@ LABEL_35:
     {
         Parent::Init();
 
-        // TODO: Implement Init
+        if (mLogDebugViewToFile)
+            UpdateDebugViewHooks();
+
+        if (!mForcedWebRoot)
+        {
+            // TODO: Finish Implementing Init
+        }
+
+        mMaxGamesPerDay = GetInteger("MaxGamesPerDay");
+
+        if (!mBuildUnlocked)
+        {
+            PopDRMComm* drm = mDRMComm;
+            if (IsWindow(drm->mDRMHwnd))
+                mIsRegistered = SendMessage(drm->mDRMHwnd, drm->mQueryMsg, 4, 0) != 0;
+            else
+            {
+                drm->mConnected = false;
+                mIsRegistered = false;
+            }
+        }
+
+        // TODO: Parse ranks.txt
+        // TODO: Parse tips.txt
+        // TODO: Parse patchnotes.txt
+        // TODO: Parse badges.txt
+
+        // TODO: Profiles
+
+        // TODO: Web cache
+
+        // TODO: Highscores
+
+        // TODO: Updates
+
+        SWTri_AddAllDrawTriFuncs();
+        LoadResourceManifest();
+
+        // TODO: Implement CustomBassMusicInterface
+        //mCustomBassMusicInterface->ReadMusicXML();
+        //mCustomBassMusicInterface->QueueEvent("Play", "LoadingScreen", true); // is forceRestart supposed to be true?
+
+        mResourceManager->LoadResources("Init");
+        if (!ExtractInitResources(mResourceManager))
+            ShowResourceError(true);
+
+        mResourceManager->LoadResources("Loader");
+        if (!ExtractLoaderResources(mResourceManager))
+            ShowResourceError(true);
+
+        if (!Is3DAccelerated())
+        {
+            mResourceManager->LoadResources("2DOnly");
+            if (!Extract2DOnlyResources(mResourceManager))
+                ShowResourceError(true);
+        }
+
+        SetCursorImage(0, IMAGE_CURSOR_POINTER);
+        SetCursorImage(1, IMAGE_CURSOR_HAND);
+        SetCursorImage(2, IMAGE_CURSOR_DRAGGING);
+
+        // TODO: 3D Objects
+
+        // TODO: Facebook Widget
+
+        // TODO: Background Images
+
+        // TODO: Main Menu
+
+        // TODO: Tooltip Manager
+
+        // TODO: Under Dialog Widgets
+
+        // TODO: Windowed Button Widget
+
+        // TODO: Resize Widget
+
+        mSoundManager->SetVolume(mVoiceVolume); // should this be voice volume or something else?
+
+        // TODO: Shared Render Target
+
+        // TODO: Stuff
+
+
+
+        // TODO: Finish Implementing Init
     }
 
     void Bej3App::UpdateDebugViewHooks()

@@ -74,5 +74,36 @@ namespace Sexy
             mSkipAd = true;
     }
 
+    void SexyApp::InitPropertiesHook()
+    {
+        bool checkSig;
+        bool required;
+        if (IsScreenSaver() || (checkSig = !mCheckPartnerSig, required = true, checkSig))
+            required = false;
+
+        LoadProperties("properties\\partner.xml", required, checkSig);
+
+        if (GetBoolean("NoReg", false))
+        {
+            mIsRegistered = true;
+            mBuildUnlocked = true;
+        }
+
+        mProdName = WStringToString(GetString("ProdName", Sexy::StringToSexyString(mProdName)));
+
+        if (!mForceFullscreen)
+            mIsWindowed = GetBoolean("DefaultWindowed", mIsWindowed);
+
+        std::wstring title = GetString("Title", L"");
+        if (title.length() > 0)
+        {
+            mTitle = title + L" " + StringToSexyString(mProductVersion);
+        }
+
+        // TODO: Init Internet Manager
+
+        mBetaSupport = new BetaSupport();
+    }
+
     // TODO: Implement SexyApp
 }
