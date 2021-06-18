@@ -30,5 +30,10 @@ namespace Sexy
         int mTimesPlayed;
         int mTimesExecuted;
         bool mTimedOut;
+    public:
+        SexyApp();
+        virtual ~SexyApp();
     };
+
+    extern SexyApp* gSexyApp;
 }

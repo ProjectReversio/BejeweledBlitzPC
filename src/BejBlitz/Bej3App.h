@@ -98,7 +98,8 @@ namespace Sexy
         std::set<HWND *> mCurReturnTitledWindows;
 
     public:
-
+        Bej3App();
+        virtual ~Bej3App();
     };
 
     extern Bej3App* gApp;
