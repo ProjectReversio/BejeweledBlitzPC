@@ -14,6 +14,7 @@ set (SRC_MAIN
 	BetaSupport.cpp
 	WinInetHTTPTransfer.cpp
 	PopDRMComm.cpp
+	GraphicsRecorder.cpp
 	
 	# Headers
 	Bej3App.h
@@ -23,6 +24,7 @@ set (SRC_MAIN
 	BetaSupport.h
 	WinInetHTTPTransfer.h
 	PopDRMComm.h
+	GraphicsRecorder.h
 )
 
 add_executable(BejBlitz WIN32 ${SRC_MAIN})

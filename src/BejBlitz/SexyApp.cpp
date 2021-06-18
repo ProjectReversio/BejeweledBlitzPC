@@ -36,9 +36,19 @@ namespace Sexy
     {
         if (mBetaSupport)
             delete mBetaSupport;
-        
+
         if (mInternetManager)
             delete mInternetManager;
+    }
+
+    void SexyApp::Init()
+    {
+        // TODO: Implement Init
+
+        Parent::Init();
+        ++mTimesExecuted;
+        if (IsScreenSaver())
+            mSkipAd = true;
     }
 
     // TODO: Implement SexyApp

@@ -8,8 +8,11 @@
 
 namespace Sexy
 {
+    const int NumBoosts = 5;
+
     class Bej3App : public SexyApp
     {
+        typedef SexyApp Parent;
     private:
         double mVoiceVolume;
         bool mBoostAutoRenew;
@@ -37,7 +40,7 @@ namespace Sexy
         //Sexy::CustomSoundManager *mCustomSoundManager; // TODO: Implement CustomSoundManager
         Sexy::Buffer mBadgeDumpBuffer;
         Sexy::Buffer mStatsDumpBuffer;
-        int mBoostCosts[5];
+        int mBoostCosts[NumBoosts];
         PopDRMComm *mDRMComm;
         bool mRegCodeNotNeeded;
         bool mWantDataUpdateOnFocus;
@@ -100,6 +103,9 @@ namespace Sexy
     public:
         Bej3App();
         virtual ~Bej3App();
+
+        void Init();
+        void UpdateDebugViewHooks();
     };
 
     extern Bej3App* gApp;

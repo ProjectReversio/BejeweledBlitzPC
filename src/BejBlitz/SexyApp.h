@@ -8,6 +8,7 @@ namespace Sexy
 {
     class SexyApp : public SexyAppBase
     {
+        typedef SexyAppBase Parent;
     protected:
         Sexy::InternetManager *mInternetManager;
         Sexy::BetaSupport *mBetaSupport;
@@ -33,6 +34,8 @@ namespace Sexy
     public:
         SexyApp();
         virtual ~SexyApp();
+
+        void Init();
     };
 
     extern SexyApp* gSexyApp;

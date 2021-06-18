@@ -20,16 +20,18 @@ class PopDRMComm
             STATUS_Disconnected,
             STATUS_InternalError,
         };
-    private:
+    public:
         PopDRMComm *mComm;
         uint mBeginGetMsg;
         uint mGetTransferStatusMsg;
         uint mFinishGetMsg;
+
+        static LRESULT CALLBACK BeginGet(const std::string& URL);
     };
 
-private:
-    HWND *mHwnd;
-    HWND *mDRMHwnd;
+public:
+    HWND mHwnd;
+    HWND mDRMHwnd;
     void *mFileHandle;
     void *mDataPtr;
     bool mConnected;
@@ -47,4 +49,15 @@ private:
     int mShowScreenMsg;
     int mWaitMsg;
     RTL_CRITICAL_SECTION mStringCritSection;
+    Web* mWeb;
+
+public:
+    PopDRMComm();
+    virtual ~PopDRMComm();
+
+    void InitWindow();
+    void InitFileMapping();
+    void BuyGame(const char* URL);
+    void ThreadProc(void* theParam);
+    static LRESULT CALLBACK WindowProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam);
 };
