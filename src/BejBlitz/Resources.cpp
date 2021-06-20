@@ -90,16 +90,32 @@ namespace Sexy
         return true;
     }
 
+    Image* IMAGE_LOADER_GEOM_GLOW = nullptr;
+    Image* IMAGE_LOADER_POPCAP = nullptr;
+    Image* IMAGE_LOADER_WHITEDOT = nullptr;
+    Image* IMAGE_MAIN_MENU_NIGHT = nullptr;
+    Image* IMAGE_768_MAIN_MENU_NIGHT = nullptr;
+    Image* IMAGE_600_MAIN_MENU_NIGHT = nullptr;
+
     bool ExtractLoaderResources(ResourceManager* resourceManager)
     {
-        // TODO: Implement ExtractLoaderResources
+        //resourceManager->InitResourceManager(); // TODO: Missing function
 
-        // TEMP: return false for now
-        return false;
+        // TODO: Extra arguments are intId and optional but these aren't support yet
+        IMAGE_LOADER_GEOM_GLOW = resourceManager->GetImageThrow("IMAGE_LOADER_GEOM_GLOW");//, 157, false);
+        IMAGE_LOADER_POPCAP = resourceManager->GetImageThrow("IMAGE_LOADER_POPCAP");//, 158, false);
+        IMAGE_LOADER_WHITEDOT = resourceManager->GetImageThrow("IMAGE_LOADER_WHITEDOT");//, 159, false);
+        IMAGE_MAIN_MENU_NIGHT = resourceManager->GetImageThrow("IMAGE_MAIN_MENU_NIGHT");//, 160, false);
+        IMAGE_768_MAIN_MENU_NIGHT = resourceManager->GetImageThrow("IMAGE_768_MAIN_MENU_NIGHT");//, 161, false);
+        IMAGE_600_MAIN_MENU_NIGHT = resourceManager->GetImageThrow("IMAGE_600_MAIN_MENU_NIGHT");//, 162, false);
+
+        return true;
     }
 
     bool Extract2DOnlyResources(ResourceManager* resourceManager)
     {
+        //resourceManager->InitResourceManager(); // TODO: Missing function
+
         // TODO: Implement Extract2DOnlyResources
 
         // TEMP: return false for now
