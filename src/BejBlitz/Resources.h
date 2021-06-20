@@ -49,5 +49,8 @@ namespace Sexy
     extern Image* IMAGE_768_MAIN_MENU_NIGHT;
     extern Image* IMAGE_600_MAIN_MENU_NIGHT;
     extern bool ExtractLoaderResources(ResourceManager* resourceManager);
+
+    extern Image* IMAGE_2DONLY_MAINMENU_BACKGROUND;
+    extern Image* IMAGE_2DONLY_MAINMENU_FOREGROUND;
     extern bool Extract2DOnlyResources(ResourceManager* resourceManager);
 }

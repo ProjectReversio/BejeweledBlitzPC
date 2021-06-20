@@ -112,13 +112,17 @@ namespace Sexy
         return true;
     }
 
+    Image* IMAGE_2DONLY_MAINMENU_BACKGROUND = nullptr;
+    Image* IMAGE_2DONLY_MAINMENU_FOREGROUND = nullptr;
+
     bool Extract2DOnlyResources(ResourceManager* resourceManager)
     {
         //resourceManager->InitResourceManager(); // TODO: Missing function
 
-        // TODO: Implement Extract2DOnlyResources
+        // TODO: Extra arguments are intId and optional but these aren't support yet
+        IMAGE_2DONLY_MAINMENU_BACKGROUND = resourceManager->GetImageThrow("IMAGE_2DONLY_MAINMENU_BACKGROUND");//, 0, false);
+        IMAGE_2DONLY_MAINMENU_FOREGROUND = resourceManager->GetImageThrow("IMAGE_2DONLY_MAINMENU_FOREGROUND");//, 1, false);
 
-        // TEMP: return false for now
-        return false;
+        return true;
     }
 }
