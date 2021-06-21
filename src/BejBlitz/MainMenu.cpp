@@ -1,5 +1,7 @@
 #include "MainMenu.h"
 #include "SexyCache.h"
+#include "Bej3App.h"
+#include "Resources.h"
 
 namespace Sexy
 {
@@ -37,8 +39,6 @@ namespace Sexy
         SetupBackground();
         if (SexyCache::Connected())
             Update();
-
-        // TODO: Implement MainMenu
     }
 
     MainMenu::~MainMenu()
@@ -50,39 +50,60 @@ namespace Sexy
 
     void MainMenu::SetupBackground()
     {
-
+        // TODO: Implement SetupBackground
     }
 
     void MainMenu::Update()
     {
-
+        // TODO: Implement Update
     }
 
-    // TODO: DrawAll function
+    // TODO: Implement DrawAll function
     //void MainMenu::DrawAll(ModelFlags flags, Graphics* g) {}
 
     void MainMenu::Draw(Graphics* g)
     {
+        if (!mUpdateCnt)
+            Update();
 
+        DeferOverlay();
+
+        // TODO: Implement Draw
+
+        if ((!SexyCache::Connected() || mLoaded) && !gApp->Is3DAccelerated())
+        {
+            // TODO: Implement Draw
+        } else {
+            g->SetColor(Color::White);
+            g->SetFont(FONT_MULTIPLIER);
+            WriteCenteredLine(g, (600 * gApp->mArtRes) / 1200, L"Loading...");
+        }
+
+        //if (mOfflineUIAlpha && mLoaderAlpha->GetOutVal() > 0.0)
+        //{
+        //
+        //}
+
+        // TODO: Implement Draw
     }
 
     void MainMenu::ButtonDepress(int num)
     {
-
+        // TODO: Implement ButtonDepress
     }
 
     void MainMenu::StartGame()
     {
-
+        // TODO: Implement StartGame
     }
 
     void MainMenu::ResizeButtons()
     {
-
+        // TODO: Implement ResizeButtons
     }
 
     void MainMenu::NewButton(Image* image, int id, ButtonListener* listener)
     {
-
+        // TODO: Implement NewButton
     }
 }

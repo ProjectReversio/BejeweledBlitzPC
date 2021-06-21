@@ -30,7 +30,9 @@ namespace Sexy
         bool mJumpToClassic;
         bool mJumpToBlitz;
         bool mLogDebugViewToFile;
+    public:
         int mArtRes;
+    private:
         int mPreInitArtRes;
         int mPauseFrames;
         bool mFocusedAfterLoad;
