@@ -6,6 +6,7 @@
 #include "SexyApp.h"
 #include "PopDRMComm.h"
 #include "MainMenu.h"
+#include "CustomBassMusicInterface.h"
 
 namespace Sexy
 {
@@ -39,7 +40,7 @@ namespace Sexy
         bool mSkipCoinCode;
         std::string mTestBkg;
         std::string mForceBkg;
-        //Sexy::CustomBassMusicInterface *mCustomBassMusicInterface; // TODO: Implement CustomBassMusicInterface
+        CustomBassMusicInterface *mCustomBassMusicInterface;
         //Sexy::CustomSoundManager *mCustomSoundManager; // TODO: Implement CustomSoundManager
         Sexy::Buffer mBadgeDumpBuffer;
         Sexy::Buffer mStatsDumpBuffer;

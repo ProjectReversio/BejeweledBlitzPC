@@ -68,7 +68,7 @@ namespace Sexy
         //mBoard = nullptr; // TODO: Implement Board
         //mLoaderScreen = nullptr; // TODO: Implement LoaderScreen
         //mFacebookWidget = nullptr; // TODO: Implement FacebookWidget
-        //mCustomBassMusicInterface = nullptr; // TODO: Implement CustomBassMusicInterface
+        mCustomBassMusicInterface = nullptr;
         mCurVoice = 0;
         mNextVoice = 0;
         mShrunkenGems = nullptr;
@@ -224,9 +224,8 @@ LABEL_35:
         SWTri_AddAllDrawTriFuncs();
         LoadResourceManifest();
 
-        // TODO: Implement CustomBassMusicInterface
-        //mCustomBassMusicInterface->ReadMusicXML();
-        //mCustomBassMusicInterface->QueueEvent("Play", "LoadingScreen", true); // is forceRestart supposed to be true?
+        mCustomBassMusicInterface->ReadMusicXML();
+        mCustomBassMusicInterface->QueueEvent(L"Play", L"LoadingScreen", true); // is forceRestart supposed to be true?
 
         mResourceManager->LoadResources("Init");
         if (!ExtractInitResources(mResourceManager))

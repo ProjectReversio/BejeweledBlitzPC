@@ -20,6 +20,7 @@ set (SRC_MAIN
 	Bej3ButtonListener.cpp
 	CurvedVal.cpp
 	SexyCache.cpp
+	CustomBassMusicInterface.cpp
 	
 	# Headers
 	Bej3App.h
@@ -35,6 +36,7 @@ set (SRC_MAIN
 	Bej3ButtonListener.h
 	CurvedVal.h
 	SexyCache.h
+	CustomBassMusicInterface.h
 )
 
 add_executable(BejBlitz WIN32 ${SRC_MAIN})
