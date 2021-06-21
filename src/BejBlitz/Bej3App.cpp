@@ -1,11 +1,13 @@
 #include "Bej3App.h"
 #include "GraphicsRecorder.h"
 #include "Resources.h"
+#include "MainMenu.h"
 
 #include <SexyAppFramework/D3DTester.h>
 #include <SexyAppFramework/SWTri.h>
 #include <SexyAppFramework/ResourceManager.h>
 #include <SexyAppFramework/SoundManager.h>
+#include <SexyAppFramework/WidgetManager.h>
 
 namespace Sexy
 {
@@ -62,7 +64,7 @@ namespace Sexy
         mNextVoiceId = -1;
         //mProfile = nullptr; // TODO: Implement Profile
         //mMenu = nullptr; // TODO: Implement Menu
-        //mMainMenu = nullptr; // TODO: Implement MainMenu
+        mMainMenu = nullptr;
         //mBoard = nullptr; // TODO: Implement Board
         //mLoaderScreen = nullptr; // TODO: Implement LoaderScreen
         //mFacebookWidget = nullptr; // TODO: Implement FacebookWidget
@@ -251,7 +253,16 @@ LABEL_35:
 
         // TODO: Background Images
 
-        // TODO: Main Menu
+        mMainMenu = new MainMenu();
+        TRect<int> menuRes;
+        menuRes.mX = -160 * mArtRes / 1200;
+        menuRes.mY = 0;
+        menuRes.mWidth = 1920 * mArtRes / 1200;
+        menuRes.mHeight = 1200 * mArtRes / 1200;
+        mMainMenu->Resize(menuRes);
+        mMainMenu->ResizeButtons();
+        mWidgetManager->AddWidget(mMainMenu);
+        mWidgetManager->SetFocus(mMainMenu);
 
         // TODO: Tooltip Manager
 

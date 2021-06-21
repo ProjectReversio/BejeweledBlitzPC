@@ -5,6 +5,7 @@
 
 #include "SexyApp.h"
 #include "PopDRMComm.h"
+#include "MainMenu.h"
 
 namespace Sexy
 {
@@ -50,7 +51,7 @@ namespace Sexy
         Sexy::Image ***mShrunkenGems;
         //Sexy::Profile *mProfile; // TODO: Implement Profile
         std::wstring mSwitchProfileName;
-        //Sexy::MainMenu *mMainMenu; // TODO: Implement MainMenu
+        Sexy::MainMenu *mMainMenu;
         //Sexy::Menu *mMenu; // TODO: Implement Menu
         int mQuitCountdown;
         //Sexy::HighScores *mHighScores; // TODO: Implement HighScores

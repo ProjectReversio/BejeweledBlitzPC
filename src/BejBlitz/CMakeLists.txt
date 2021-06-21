@@ -16,6 +16,10 @@ set (SRC_MAIN
 	PopDRMComm.cpp
 	GraphicsRecorder.cpp
 	Resources.cpp
+	MainMenu.cpp
+	Bej3ButtonListener.cpp
+	CurvedVal.cpp
+	SexyCache.cpp
 	
 	# Headers
 	Bej3App.h
@@ -27,6 +31,10 @@ set (SRC_MAIN
 	PopDRMComm.h
 	GraphicsRecorder.h
 	Resources.h
+	MainMenu.h
+	Bej3ButtonListener.h
+	CurvedVal.h
+	SexyCache.h
 )
 
 add_executable(BejBlitz WIN32 ${SRC_MAIN})
