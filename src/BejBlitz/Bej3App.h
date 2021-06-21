@@ -12,6 +12,11 @@ namespace Sexy
 {
     const int NumBoosts = 5;
 
+    class LoaderScreen : public Widget
+    {
+        double mLastProgress;
+    };
+
     class Bej3App : public SexyApp
     {
         typedef SexyApp Parent;
@@ -65,7 +70,7 @@ namespace Sexy
         //Sexy::Background *mBlitzBackgroundLo; // TODO: Implement Background
         //Sexy::Background *mBlitzBackgroundReplay; // TODO: Implement Background
         //Sexy::Board *mBoard; // TODO: Implement Board
-        //Sexy::LoaderScreen *mLoaderScreen; // TODO: Implement LoaderScreen
+        Sexy::LoaderScreen *mLoaderScreen;
         //Sexy::FacebookWidget *mFacebookWidget; // TODO: Implement FacebookWidget
         //Sexy::TooltipManager *mTooltipManager; // TODO: Implement TooltipManager
         //Sexy::SharedRenderTarget mRestartRT; // TODO: Implement SharedRenderTarget

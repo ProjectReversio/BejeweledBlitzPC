@@ -66,7 +66,7 @@ namespace Sexy
         //mMenu = nullptr; // TODO: Implement Menu
         mMainMenu = nullptr;
         //mBoard = nullptr; // TODO: Implement Board
-        //mLoaderScreen = nullptr; // TODO: Implement LoaderScreen
+        mLoaderScreen = nullptr;
         //mFacebookWidget = nullptr; // TODO: Implement FacebookWidget
         mCustomBassMusicInterface = nullptr;
         mCurVoice = 0;
