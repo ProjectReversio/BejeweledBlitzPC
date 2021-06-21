@@ -70,9 +70,12 @@ namespace Sexy
 
         // TODO: Implement Draw
 
-        if ((!SexyCache::Connected() || mLoaded) && !gApp->Is3DAccelerated())
+        if ((!SexyCache::Connected() || mLoaded))
         {
-            // TODO: Implement Draw
+            if (!gApp->Is3DAccelerated())
+            {
+                // TODO: Implement Draw
+            }
         } else {
             g->SetColor(Color::White);
             g->SetFont(FONT_MULTIPLIER);
