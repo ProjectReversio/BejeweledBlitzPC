@@ -21,6 +21,7 @@ set (SRC_MAIN
 	CurvedVal.cpp
 	SexyCache.cpp
 	CustomBassMusicInterface.cpp
+	SexyMathHermite.cpp
 	
 	# Headers
 	Bej3App.h
@@ -37,6 +38,7 @@ set (SRC_MAIN
 	CurvedVal.h
 	SexyCache.h
 	CustomBassMusicInterface.h
+	SexyMathHermite.h
 )
 
 add_executable(BejBlitz WIN32 ${SRC_MAIN})
