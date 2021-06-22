@@ -54,7 +54,7 @@ namespace Sexy
         // TODO: Cleanup Decompile
 
         float v7 = f - point->mX;
-        float v8 = f - point->mFx; // TODO: Is this part correct?
+        float v8 = f - point[1].mX; // TODO: Is this part correct?
         float fa = v7 * piece->mCoeffs[1] + piece->mCoeffs[0];
         float v5 = v7 * v7;
         float v6 = v5 * v8;

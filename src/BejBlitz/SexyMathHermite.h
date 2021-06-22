@@ -31,6 +31,8 @@ namespace Sexy
         virtual ~SexyMathHermite();
 
         float Evaluate(float f);
+
+    private:
         void CreatePiece(SPoint* point, SPiece* piece);
         float EvaluatePiece(float f, SPoint* point, SPiece* piece);
         bool BuildCurve();
