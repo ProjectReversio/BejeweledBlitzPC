@@ -51,8 +51,15 @@ namespace Sexy
 
     float SexyMathHermite::EvaluatePiece(float f, SPoint* point, SPiece* piece)
     {
-        // TODO: Implement EvaluatePiece
-        return 0.0f;
+        // TODO: Cleanup Decompile
+
+        float v7 = f - point->mX;
+        float v8 = f - point->mFx; // TODO: Is this part correct?
+        float fa = v7 * piece->mCoeffs[1] + piece->mCoeffs[0];
+        float v5 = v7 * v7;
+        float v6 = v5 * v8;
+        float v10 = v5 * piece->mCoeffs[2] + fa;
+        return v6 * piece->mCoeffs[3] + v10;
     }
 
     bool SexyMathHermite::BuildCurve()
